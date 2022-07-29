@@ -17,3 +17,14 @@ spring:
       mode: always
 server:
   port: 8080
+
+###### Security Configs
+# 5 minutes duration by default: 5 minutes * 60 seconds * 1000 milliseconds
+security:
+  jwt:
+    token:
+      secret-key:secret-key
+    expire:
+      60000
+
+
