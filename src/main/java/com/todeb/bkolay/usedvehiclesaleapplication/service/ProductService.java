@@ -1,5 +1,6 @@
 package com.todeb.bkolay.usedvehiclesaleapplication.service;
 
+import com.todeb.bkolay.usedvehiclesaleapplication.exception.EntityNotFoundException;
 import com.todeb.bkolay.usedvehiclesaleapplication.model.dto.ProductDTO;
 import com.todeb.bkolay.usedvehiclesaleapplication.model.entity.Product;
 import com.todeb.bkolay.usedvehiclesaleapplication.model.mapper.ProductMapper;
@@ -25,7 +26,7 @@ public class ProductService {
 
     public Product getById(Long id){
         Optional<Product> byId = productRepository.findById(id);
-        return byId.orElseThrow(()-> new RuntimeException("Product not found"));
+        return byId.orElseThrow(()-> new EntityNotFoundException("Product","id :"+id));
     }
 
     public Product create(ProductDTO productDTO){
@@ -40,7 +41,7 @@ public class ProductService {
     public Product update(String title, ProductDTO product){
         Optional<Product> productByTitle = productRepository.findProductByTitle(title);
         if(!productByTitle.isPresent()){
-            return null;
+            throw new EntityNotFoundException("Product","title :" + title);
         }
         Product updatedProduct = productByTitle.get();
         if(!StringUtils.isEmpty(product.getTitle())){

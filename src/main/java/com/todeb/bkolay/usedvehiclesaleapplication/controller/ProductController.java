@@ -25,12 +25,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity getProductById(@PathVariable("id") Long id){
-        Product byId;
-        try {
-            byId = productService.getById(id);
-        }catch (RuntimeException exception){
-            return ResponseEntity.notFound().build();
-        }
+        Product byId= productService.getById(id);
         return ResponseEntity.status(HttpStatus.OK).body(byId);
     }
     @PostMapping("/create")
@@ -44,11 +39,7 @@ public class ProductController {
     }
     @DeleteMapping
     public ResponseEntity deleteProduct(@RequestParam(name = "id") Long id){
-        try {
-            productService.delete(id);
-        }catch (RuntimeException exception){
-            return ResponseEntity.notFound().build();
-        }
+        productService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("Related Product deleted successfully");
     }
 
