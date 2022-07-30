@@ -17,6 +17,8 @@ spring:
       mode: always
 server:
   port: 8080
+  servlet:
+    context-path: /used-vehicle-sale-application/api
 
 ###### Security Configs
 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 milliseconds
@@ -25,6 +27,6 @@ security:
     token:
       secret-key:secret-key
     expire:
-      60000
+      6000000
 
 
