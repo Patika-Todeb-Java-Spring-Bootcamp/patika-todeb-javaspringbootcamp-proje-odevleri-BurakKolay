@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Disable CSRF (cross site request forgery)
         http.csrf().disable();
 
-        // No session will be created or used by spring security
+        // No session will be created or used by spring security. Cokkie
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         // Entry points
