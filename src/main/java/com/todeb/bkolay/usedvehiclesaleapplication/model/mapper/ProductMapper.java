@@ -10,6 +10,8 @@ public class ProductMapper {
         productDTO.setDetails(product.getDetails());
         productDTO.setPrice(product.getPrice());
         productDTO.setDay(product.getDay());
+        //productDTO.setViewed(product.getViewed());
+        //productDTO.setFavorite(product.getFavorite());
         return productDTO;
     }
 
@@ -19,6 +21,8 @@ public class ProductMapper {
         product.setDetails(productDTO.getDetails());
         product.setPrice(productDTO.getPrice());
         product.setDay(productDTO.getDay());
+        //product.setViewed(productDTO.getViewed());
+        //product.setFavorite(productDTO.getFavorite());
         return product;
     }
 }
