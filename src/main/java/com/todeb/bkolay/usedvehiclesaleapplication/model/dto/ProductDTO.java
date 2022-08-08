@@ -12,4 +12,7 @@ public class ProductDTO {
     private String details;
     private double price;
     private int day;
+    //Sonradan eklenilenler
+    //private int viewed;
+    //private int favorite;
 }
