@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/users/signin").permitAll()
                 .antMatchers("/users/signup").permitAll()
+                .antMatchers("/swagger-ui.html").permitAll()
                 // Authorize any endpoint by a role
 //                .antMatchers("/users/delete/**").hasRole("ADMIN")
                 // Disallow everything else..
